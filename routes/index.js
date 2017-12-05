@@ -2,6 +2,11 @@ var express = require('express');
 var router = express.Router();
 
 function sendResponse(req, res) {
+  var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  if (ip.substr(0, 7) == "::ffff:") {
+    ip = ip.substr(7)
+  }
+
   var data = {
     method: req.method,
     query: JSON.stringify(req.query) !== '{}' ? req.query : undefined,
@@ -10,7 +15,7 @@ function sendResponse(req, res) {
     headers: req.headers,
     cookies: req.cookies,
     url: req.originalUrl,
-    originAddress: req.connection.remoteAddress,
+    originAddress: ip,
   }
 
   res.send(data);
