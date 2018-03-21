@@ -18,11 +18,13 @@ npm start
 ## 使用方法
 运行项目后，访问 `http://localhost:3000/` 即可获取基本的返回信息，包括请求的方法（method），请求头（headers），Cookies，请求的 URL 和 IP 地址（originAddress）。请求方法支持最新的 HTTP 方法，包括 PUT、DELETE 和 PATCH 等。
 
-如果请求的 URL 包含参数 Params，则返回的信息中会包含 params 字段，值为请求时的 Params 值。
+如果请求的 URL 包含参数 Params，则返回的信息中会包含 params 字段，值为请求时的 Params 值。目前只支持一级参数的查询，更加深入的查询会返回 404 的错误。
 
 如果请求的 URL 包含查询参数 Query，则返回的信息中会包含 query 字段，值为 Query 查询的所有字段和值的集合。
 
 如果请求的 URL 包含请求体 Body，则返回的信息中会包含 body 字段，值为请求体所有字段和值的集合。
+
+如果请求的路径不存在或者出现服务器错误，则会返回一个对象，该对象的字段为 `status`，值为返回的 HTTP 状态码。
 
 返回数据格式示例如下：
 ```
@@ -104,5 +106,11 @@ npm start
     },
     "url": "/abc",
     "originAddress": "localhost"
+}
+```
+```
+// [GET] http://localhost:3000/path/not/exist
+{
+    status: 404
 }
 ```
