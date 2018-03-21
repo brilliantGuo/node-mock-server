@@ -55,21 +55,8 @@ npm start
         b: "2",
         c: "3"
     },
-    headers: {
-        host: "localhost:3000",
-        connection: "keep-alive",
-        upgrade-insecure-requests: "1",
-        user-agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.162 Safari/537.36",
-        accept: "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
-        accept-encoding: "gzip, deflate, br",
-        accept-language: "zh-CN,zh;q=0.9,en;q=0.8",
-        cookie: "_ga=GA1.1.1475505677.1500279485"
-    },
-    cookies: {
-        _ga: "GA1.1.1475505677.1500279485"
-    },
-    url: "/abc?a=1&b=2&c=3",
-    originAddress: "localhost"
+    // 其余信息同上，不再赘述，下同
+    ...
 }
 ```
 
@@ -85,23 +72,7 @@ npm start
         "b": "2",
         "c": "3"
     },
-    "headers": {
-        "cache-control": "no-cache",
-        "postman-token": "49775a2c-1deb-4a06-b9d8-4cea6e483c0a",
-        "user-agent": "PostmanRuntime/7.1.1",
-        "accept": "*/*",
-        "host": "localhost:3000",
-        "cookie": "SESSIONID=s%3AGXU3XQpdLXtcwh6EQ4Nko2AKpLDjoggw.2oYnE%2F5Tz2P4qM9gmZxg8OwZLKKKuJ5yRojFwf9m4Yw",
-        "content-type": "application/x-www-form-urlencoded",
-        "accept-encoding": "gzip, deflate",
-        "content-length": "11",
-        "connection": "keep-alive"
-    },
-    "cookies": {
-        "SESSIONID": "s:GXU3XQpdLXtcwh6EQ4Nko2AKpLDjoggw.2oYnE/5Tz2P4qM9gmZxg8OwZLKKKuJ5yRojFwf9m4Yw"
-    },
-    "url": "/abc",
-    "originAddress": "localhost"
+    ...
 }
 ```
 
