@@ -1,5 +1,5 @@
 ## 项目简介
-这个项目是用 Express 框架写成的，主要返回一些基本的请求信息，有些个人觉得有趣的信息也会一起放上来。如果你有任何好的想法，你可以在 Issues 中提，我会尽快做好更新；或者愿意协助我一起完善该项目，欢迎你 PR ！
+这个项目是用 Express 框架写成的，主要返回一些基本的请求信息，有些个人觉得有趣的信息也会一起放上来。如果你有任何好的想法，你可以在 Issues 中提，我会尽快做好更新；或者愿意协助我一起完善该项目，欢迎 PR ！
 
 最后，如果你喜欢这个项目，欢迎点一下 Star ，或者 Follow 一下我也是极好的 (´･ᴗ･`)
 
@@ -9,24 +9,14 @@
 git clone git@github.com:Shoufu/nodejs-test-ajax.git
 // 进入项目文件夹
 cd nodejs-test-ajax
-// 安装项目所需的库，如果安装了 Yarn 可以运行 yarn 代替
+// 安装项目所需的库，如果安装了 Yarn 可以运行 yarn 代替
 npm install
 // 项目运行，默认监听 3000 端口
 npm start
 ```
 
 ## 使用方法
-运行项目后，访问 `http://localhost:3000/` 即可获取基本的返回信息，包括请求的方法（method），请求头（headers），Cookies，请求的 URL 和 IP 地址（originAddress）。请求方法支持最新的 HTTP 方法，包括 PUT、DELETE 和 PATCH 等。
-
-如果请求的 URL 包含参数 Params，则返回的信息中会包含 params 字段，值为请求时的 Params 值。目前只支持一级参数的查询，更加深入的查询会返回 404 的错误。
-
-如果请求的 URL 包含查询参数 Query，则返回的信息中会包含 query 字段，值为 Query 查询的所有字段和值的集合。
-
-如果请求的 URL 包含请求体 Body，则返回的信息中会包含 body 字段，值为请求体所有字段和值的集合。
-
-如果请求的路径不存在或者出现服务器错误，则会返回一个对象，该对象的字段为 `status`，值为返回的 HTTP 状态码。
-
-返回数据格式示例如下：
+运行项目后，访问 `http://localhost:3000/` 即可获取基本的返回信息，包括请求的方法（method），请求头（headers），Cookies，请求的 URL 和 IP 地址（originAddress）。请求方法支持最新的 HTTP 方法，包括 PUT、DELETE 和 PATCH 等。
 ```
 // [GET] http://localhost:3000/
 
@@ -50,6 +40,10 @@ npm start
     originAddress: "localhost"
 }
 ```
+
+如果请求的 URL 包含参数 Params，则返回的信息中会包含 params 字段，值为请求时的 Params 值。目前只支持一级参数的查询，更加深入的查询会返回 404 的错误。
+
+如果请求的 URL 包含查询参数 Query，则返回的信息中会包含 query 字段，值为 Query 查询的所有字段和值的集合。
 ```
 // [GET] http://localhost:3000/abc?a=1&b=2&c=3
 {
@@ -77,6 +71,8 @@ npm start
     originAddress: "localhost"
 }
 ```
+
+如果请求的 URL 包含请求体 Body，则返回的信息中会包含 body 字段，值为请求体所有字段和值的集合。
 ```
 // [POST] http://localhost:3000/abc
 // Data: { a: "1", b: "2", c: "3" }
@@ -108,9 +104,12 @@ npm start
     "originAddress": "localhost"
 }
 ```
+
+如果请求的路径不存在或者出现服务器错误，则会返回一个对象，该对象的字段为 `status`，值为返回的 HTTP 状态码。
 ```
 // [GET] http://localhost:3000/path/not/exist
 {
     status: 404
 }
 ```
+
