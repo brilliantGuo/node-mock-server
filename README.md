@@ -6,9 +6,9 @@
 ## 项目运行
 ```
 // Clone 项目到本地
-git clone git@github.com:Shoufu/nodejs-test-ajax.git
+git clone git@github.com:Shoufu/node-mock-server.git
 // 进入项目文件夹
-cd nodejs-test-ajax
+cd node-mock-server
 // 安装项目所需的库，如果安装了 Yarn 可以运行 yarn 代替
 npm install
 // 项目运行，默认监听 3000 端口
